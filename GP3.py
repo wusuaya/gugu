@@ -88,8 +88,7 @@ else:
         type='candle',
         volume=True,
         style=s,
-        mav=(5,20),
-        addplot=apds,
+        mav=(5, 20, 60, 120),
         returnfig=True
     )
     st.pyplot(fig)
