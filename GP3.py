@@ -77,8 +77,21 @@ else:
     else:
         plot_data = df.iloc[:st.session_state.current_day + 1]
 
+
+    # 创建自定义样式（红涨绿跌，尝试上涨空心、下跌实心）
+    mc = mpf.make_marketcolors(up='red', down='green', edge='gray')
+    s = mpf.make_mpf_style(base_mpf_style='classic', marketcolors=mc)
+
     # 绘制K线图
-    fig, axlist = mpf.plot(plot_data, type='candle', volume=True, style='charles', mav=(5, 20, 60, 120), returnfig=True)
+    fig, axlist = mpf.plot(
+        plot_data,
+        type='candle',
+        volume=True,
+        style=s,gray
+        mav=(5,20),
+        addplot=apds,
+        returnfig=True
+    )
     st.pyplot(fig)
 
     # 显示当前交易日信息
