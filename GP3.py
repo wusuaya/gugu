@@ -78,16 +78,16 @@ else:
         plot_data = df.iloc[:st.session_state.current_day + 1]
 
 
-    # 创建自定义样式（红涨绿跌，尝试上涨空心、下跌实心）
-    mc = mpf.make_marketcolors(up='red', down='green', edge='grey')
-    s = mpf.make_mpf_style(base_mpf_style='classic', marketcolors=mc)
+    # 创建自定义样式（红涨绿跌）
+    mc = mpf.make_marketcolors(up='red', down='green')
+    s = mpf.make_mpf_style(marketcolors=mc)
 
     # 绘制K线图
     fig, axlist = mpf.plot(
         plot_data,
         type='candle',
         volume=True,
-        style=s,grey
+        style=s,
         mav=(5,20),
         addplot=apds,
         returnfig=True
