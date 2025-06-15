@@ -87,7 +87,7 @@ else:
         plot_data,
         type='candle',
         volume=True,
-        style=s,gray
+        style=s,grey
         mav=(5,20),
         addplot=apds,
         returnfig=True
