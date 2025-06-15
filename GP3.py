@@ -79,7 +79,7 @@ else:
 
 
     # 创建自定义样式（红涨绿跌，尝试上涨空心、下跌实心）
-    mc = mpf.make_marketcolors(up='red', down='green', edge='gray')
+    mc = mpf.make_marketcolors(up='red', down='green', edge='grey')
     s = mpf.make_mpf_style(base_mpf_style='classic', marketcolors=mc)
 
     # 绘制K线图
